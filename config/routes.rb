@@ -7,6 +7,7 @@ end
   resources :lessons, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :instructor do
+    resources :lessons, only: [:update]
     resources :sections, only: [] do
       resources :lessons, only: [:new, :create]
     end
