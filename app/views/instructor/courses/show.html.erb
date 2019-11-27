@@ -2,7 +2,13 @@
     $(fucntion() {
         $('.lessons li').sortable({
             update: function( event, ui) {
-                alert("LessonId: " + ui.item.data('item-id') + " Index: " + ui.item.index());
+                $.ajax({
+                    type: 'PUT',
+                    url: ui.item.data('upate-url'),
+                    dataType: 'json',
+                    data: { lesson: { row_order_position: ui.item.index() } }
+                });
+            
             }
         });
             
@@ -32,7 +38,7 @@
                 <ul class="lessons">
                     <% section.lessons.rank(:row_order).each do |lesson| %>
                         
-                        <li data-item-id=<%= lesson.id %>>
+                        <li data-update-url="<%= instructor_lesson_path(lesson) %>">
                             <b><%= lesson.title %></b>
                             -
                             <%= lesson.subtitle %>
