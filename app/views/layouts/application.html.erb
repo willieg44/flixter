@@ -67,9 +67,9 @@
       <div class="col-12 col-sm-3">
         <b>About</b>
         <br />
-        <%= link_to 'Team', 'team_path' %>
+        <%= link_to 'Team', team_path %>
         <br />
-        <%= link_to 'Careers', 'career_path' %>
+        <%= link_to 'Careers', career_path %>
         <br />
         <%= link_to 'Privacy Policy', privacy_path %>
       </div>
@@ -86,11 +86,15 @@
         <b>Social</b>
         <br />
         <br />
-        <%= link_to 'http://github.com/willieg44' do %>
+        <%= link_to 'https://github.com/willieg44' do %>
           <span class="fa fa-github-square fa-2x social-button"></span>
         <% end %>
-        <span class="fa fa-facebook-square fa-2x social-button"></span>
-        <span class="fa fa-twitter-square fa-2x social-button"></span>
+        <%= link_to 'https://facebook.com/will-gillam' do %>
+          <span class="fa fa-facebook-square fa-2x social-button"></span>
+        <% end %>
+        <%= link_to 'https://twitter.com/gillamwill' do %>
+          <span class="fa fa-twitter-square fa-2x social-button"></span>
+        <% end %>
       </div>
     </div>
   </div>
